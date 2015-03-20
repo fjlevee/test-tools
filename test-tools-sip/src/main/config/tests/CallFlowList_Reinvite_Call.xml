@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<callflowlist name="ReinviteCall" title="Reinvite Call Uses Cases">
+	<comment>
+	<![CDATA[This list of call flow shows uses cases for reinvite]]>
+	</comment>
+	<callflow name="CallFlow_05_Prack_REINVITE" file="CallFlow_05_Prack_REINVITE.xml" />
+	<callflow name="CallFlow_06_Cancel" file="CallFlow_06_Cancel.xml" />
+	<callflowlist name="CloseCall_With_Http_request"
+		title="CloseCall With Http request Uses Cases">
+		<comment>
+			<![CDATA[This list of call flow shows special uses cases when closing call with http requests]]>
+		</comment>
+		<callflow name="CallFlow_11_CloseCall_With_Http_request" file="CallFlow_11_CloseCall_With_Http_request.xml" />
+	</callflowlist>
+</callflowlist>

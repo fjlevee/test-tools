@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration debug="false"
+	xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="SIP_STACK" class="org.apache.log4j.RollingFileAppender">
+		<param name="file" value="logs/SipStack.log" />
+		<param name="maxBackupIndex" value="10" />
+		<param name="maxFileSize" value="10000000" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%p] [%t] %d %m%n"/>
+		</layout>
+	</appender>
+	<!-- Loggers Declarations -->
+	<logger name="com.fjl.test.tools">
+		<level value="TRACE" />
+		<appender-ref ref="SIP_STACK" />
+	</logger>
+	<logger name="org.apache.commons.configuration">
+		<level value="WARN" />
+		<appender-ref ref="SIP_STACK" />
+	</logger>
+</log4j:configuration>

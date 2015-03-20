@@ -1,0 +1,44 @@
+<!-- Configuration file for Assembly (i.e. packaging) -->
+<assembly>
+	<id>makepackage</id>
+	<formats>
+		<format>tar</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<fileSets>
+		<!-- Add Start Scripts Files -->
+		<fileSet>
+			<directory>target</directory>
+			<includes>
+				<include>classpath_*.txt</include>
+			</includes>
+			<outputDirectory>.</outputDirectory>
+		</fileSet>	
+		<!-- Add Librairies Files -->
+		<fileSet>
+			<directory>target/lib</directory>
+			<includes>
+				<include>*.jar</include>
+			</includes>
+			<outputDirectory>lib</outputDirectory>
+		</fileSet>
+		<!-- Add Scripts Files -->
+		<fileSet>
+			<directory>src/main/scripts</directory>
+			<includes>
+				<include>run_test.bat</include>
+				<include>run_test.sh</include>
+			</includes>
+			<fileMode>0774</fileMode>
+			<outputDirectory>.</outputDirectory>
+		</fileSet>
+		<!-- Add Test Files -->
+		<fileSet>
+			<directory>src/test/resources</directory>
+			<includes>
+				<include>*.tst</include>
+			</includes>
+			<outputDirectory>.</outputDirectory>
+		</fileSet>		
+	</fileSets>
+</assembly>

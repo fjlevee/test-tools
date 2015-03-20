@@ -1,0 +1,18 @@
+<testprofile name="10.194.124.94_Mobicent_TOMCAT_ProxyRegistrar" isIms="true">
+	<sipserver ipaddress="10.194.124.94" ipport="5080">
+	</sipserver>
+	<httpserver ipaddress="10.194.124.94" ipport="8080" url="/ProxyRegistrarServer/ProxyRegistrarAdmin">
+	</httpserver>
+	<clientprofiles>
+		<clientprofile name="+33875600601">
+			<proxy ipaddress="[SIP_SERVER_IP_ADDRESS]" ipport="[SIP_SERVER_IP_PORT]" domain="sip.france.fr" realm="sip.france.fr"/>
+			<sipstack udplistenport="2000" tcplistenport="2001" protocol="udp"/>
+			<sipprofile displayname="0875600601" identity="+33875600601" private_identity="+33875600601@sip.france.fr" password="imt30imt30"/>
+		</clientprofile>
+		<clientprofile name="+33875600602">
+			<proxy ipaddress="[SIP_SERVER_IP_ADDRESS]" ipport="[SIP_SERVER_IP_PORT]" domain="sip.france.fr" realm="sip.france.fr"/>
+			<sipstack udplistenport="2002" tcplistenport="2003" protocol="udp"/>
+			<sipprofile displayname="0875600602" identity="+33875600602" private_identity="+33875600602@sip.france.fr" password="imt30imt30"/>
+		</clientprofile>
+	</clientprofiles>
+</testprofile>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- logback configuration. -->
+<configuration debug="true" scan="true" scanPeriod="30 seconds">
+
+	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+		<Target>System.out</Target>
+		<encoder>
+			<!-- Trace the Line and the method name that called the logger -->
+			<!--<pattern>%date{ISO8601} %-5level [%-20.20thread] %logger\(%line\) 
+				%M - %message%n</pattern> -->
+			<!-- Do not trace the Line and the method name that called the logger -->
+			<pattern>%date{ISO8601} %-5level [%-20.20thread] %logger - %message%n
+			</pattern>
+		</encoder>
+	</appender>
+
+
+	<appender name="TEST_APPENDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<append>true</append>
+		<file>test.log</file>
+		<encoder>
+			<!-- Trace the Line and the method name that called the logger -->
+			<!--<pattern>%date{ISO8601} %-5level [%-20.20thread] %logger\(%line\) 
+				%M - %message%n</pattern> -->
+			<!-- Do not trace the Line and the method name that called the logger -->
+			<pattern>%date{ISO8601} %-5level [%-20.20thread] %logger - %message%n
+			</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<maxIndex>10</maxIndex>
+			<FileNamePattern>test.log.%i</FileNamePattern>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>1000KB</MaxFileSize>
+		</triggeringPolicy>
+	</appender>
+
+
+
+	<!-- Loggers Declarations -->
+
+	<logger name="com.fjl.test">
+		<level value="TRACE" />
+		<appender-ref ref="TEST_APPENDER" />
+	</logger>
+
+	<logger name="org.apache.commons.configuration">
+		<level value="WARN" />
+		<appender-ref ref="TEST_APPENDER" />
+	</logger>
+
+	<logger name="org.apache.commons.httpclient">
+		<level value="WARN" />
+		<appender-ref ref="TEST_APPENDER" />
+	</logger>
+	<logger name="httpclient.wire">
+		<level value="WARN" />
+		<appender-ref ref="TEST_APPENDER" />
+	</logger>
+
+	<!-- <root level="TRACE"> <appender-ref ref="B2B_APPENDER" /> </root> -->
+</configuration>
+

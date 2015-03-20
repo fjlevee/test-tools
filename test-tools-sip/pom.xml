@@ -1,0 +1,73 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.fjl.test.tools</groupId>
+		<artifactId>test-tools-main</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>test-tools-sip</artifactId>
+	<name>FJ. LEVEE SIP Test Tools </name>
+	<description>FJ. LEVEE Test Tools</description>
+	<packaging>jar</packaging>
+	<properties>
+		<!-- ### Packaging config ### -->
+		<project.main.package>
+			com/fjl/test/tools/sip/
+		</project.main.package>
+	</properties>
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.fjl.test.tools</groupId>
+			<artifactId>test-sip-stack</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fjl.test.tools</groupId>
+			<artifactId>test-tools-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.sip</groupId>
+			<artifactId>jain-sip-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.sip</groupId>
+			<artifactId>jain-sip-ri</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+		</dependency>
+
+	</dependencies>
+
+
+
+	<developers>
+		<developer>
+			<id>ofli8276</id>
+			<name>Francois-Joseph LEVEE</name>
+			<email>francoisjoseph.levee@orange.com</email>
+			<organization>orange</organization>
+			<organizationUrl>http://www.orange.com</organizationUrl>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+	</developers>
+
+
+</project>

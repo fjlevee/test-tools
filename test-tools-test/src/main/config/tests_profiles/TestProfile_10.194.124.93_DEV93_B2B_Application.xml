@@ -1,0 +1,31 @@
+<testprofile name="10.194.124.93_DEV93_B2B_Application" isIms="false">
+	<sipserver ipaddress="10.194.124.93" ipport="5060"/>
+	<httpserver ipaddress="10.194.124.93" ipport="8080" url="/B2BApplication/B2BMultiLegsApplicationHttpServlet"/>
+	<clientprofiles>
+		<clientprofile name="0875600601">
+			<proxy ipaddress="[SIP_SERVER_IP_ADDRESS]" ipport="[SIP_SERVER_IP_PORT]" domain="[LOCAL_ADDRESS]"/>
+			<sipstack udplistenport="2000" tcplistenport="2001" protocol="udp"/>
+			<sipprofile displayname="0875600601" identity="0875600601" password="0875600601"/>
+		</clientprofile>
+		<clientprofile name="0875600602">
+			<proxy ipaddress="[SIP_SERVER_IP_ADDRESS]" ipport="[SIP_SERVER_IP_PORT]" domain="[LOCAL_ADDRESS]"/>
+			<sipstack udplistenport="2002" tcplistenport="2003" protocol="udp"/>
+			<sipprofile displayname="0875600602" identity="0875600602" password="0875600602"/>
+		</clientprofile>
+		<clientprofile name="0875600603">
+			<proxy ipaddress="[SIP_SERVER_IP_ADDRESS]" ipport="[SIP_SERVER_IP_PORT]" domain="[LOCAL_ADDRESS]"/>
+			<sipstack udplistenport="2004" tcplistenport="2005" protocol="udp"/>
+			<sipprofile displayname="0875600603" identity="0875600603" password="0875600603"/>
+		</clientprofile>
+		<clientprofile name="0875600604">
+			<proxy ipaddress="[SIP_SERVER_IP_ADDRESS]" ipport="[SIP_SERVER_IP_PORT]" domain="[LOCAL_ADDRESS]"/>
+			<sipstack udplistenport="2006" tcplistenport="2007" protocol="udp"/>
+			<sipprofile displayname="0875600604" identity="0875600604" password="0875600604"/>
+		</clientprofile>
+		<clientprofile name="0875600605">
+			<proxy ipaddress="[SIP_SERVER_IP_ADDRESS]" ipport="[SIP_SERVER_IP_PORT]" domain="[LOCAL_ADDRESS]"/>
+			<sipstack udplistenport="2008" tcplistenport="2009" protocol="udp"/>
+			<sipprofile displayname="0875600605" identity="0875600605" password="0875600605"/>
+		</clientprofile>
+	</clientprofiles>
+</testprofile>

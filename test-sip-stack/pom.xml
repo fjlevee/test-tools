@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.fjl.test.tools</groupId>
+		<artifactId>test-tools-main</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>test-sip-stack</artifactId>
+	<name>Test Sip Stack</name>
+	<description>Sip Stack</description>
+	<packaging>jar</packaging>
+	<properties>
+		<!-- ### Packaging config ### -->
+		<project.main.package>
+			com/fjl/test/tools/
+		</project.main.package>
+	</properties>
+
+
+	<dependencies>
+		<dependency> 
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId> 
+		</dependency>
+		<!-- 
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+		</dependency>
+		 -->
+		<dependency>
+			<groupId>javax.sip</groupId>
+			<artifactId>jain-sip-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.sip</groupId>
+			<artifactId>jain-sip-ri</artifactId>
+		</dependency>
+		<!-- 
+		<dependency>
+			<groupId>commons-configuration</groupId>
+			<artifactId>commons-configuration</artifactId>
+		</dependency>
+		 -->
+	</dependencies>
+	
+
+
+	<developers>
+		<developer>
+			<id>ofli8276</id>
+			<name>Francois-Joseph LEVEE</name>
+			<email>francoisjoseph.levee@orange.com</email>
+			<organization>orange</organization>
+			<organizationUrl>http://www.orange.com</organizationUrl>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+	</developers>
+
+	
+</project>

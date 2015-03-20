@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<callflow id="app-76qgjawmlpan|CALL_ID75_00D0E90207E0_T610610042@10.194.128.193|-6eee7f0af63b61c8" time="1246608072418">
+	<http method="get" time="1000">
+		<param name="incomingCallAction" value="handle"/>
+		<param name="debuggerActivated" value="on"/>
+		<param name="action" value="saveParameters"/>
+		<param name="forkingList" value="sip:0875600603@10.194.124.162"/>
+		<param name="callTimer" value="15000"/>
+		<param name="reroute" value="sip:0875600603@10.194.124.162"/>
+	</http>
+	<request direction="received" method="INVITE" ifctype="ORIGINATING_REGISTERED" time="3000" callid="SESSION_1" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Allow"><![CDATA[ACK, BYE, CANCEL, INVITE, NOTIFY, REFER, DO, UPDATE, OPTIONS, SUBSCRIBE, PRACK, INFO]]></header>
+			<header name="Call-ID"><![CDATA[SESSION_1]]></header>
+			<header name="Content-Type"><![CDATA[application/sdp]]></header>
+			<header name="Supported"><![CDATA[100rel, timer, replaces]]></header>
+			<header name="Content"><![CDATA[v=0
+o=- 162620233 162620233 IN IP4 10.194.128.193
+s=VOIP P170S 01.31.10
+c=IN IP4 10.194.128.193
+t=0 0
+m=audio 41000 RTP/AVP 0 8 18 101
+a=rtpmap:0 PCMU/8000/1
+a=rtpmap:8 PCMA/8000/1
+a=rtpmap:18 G729/8000/1
+a=fmtp:18 annexb=no
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-15
+a=sendrecv
+]]></header>
+		</message>
+	</request>
+	<request direction="sent" method="INVITE" time="5000" callid="SESSION_2" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Content-Type"><![CDATA[application/sdp]]></header>
+			<header name="Call-ID"><![CDATA[SESSION_2]]></header>
+			<header name="Supported"><![CDATA[100rel, timer, replaces]]></header>
+			<header name="Content"><![CDATA[v=0
+o=- 162620233 162620233 IN IP4 10.194.128.193
+s=VOIP P170S 01.31.10
+c=IN IP4 10.194.128.193
+t=0 0
+m=audio 41000 RTP/AVP 0 8 18 101
+a=rtpmap:0 PCMU/8000/1
+a=rtpmap:8 PCMA/8000/1
+a=rtpmap:18 G729/8000/1
+a=fmtp:18 annexb=no
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-15
+a=sendrecv
+]]></header>
+		</message>
+	</request>
+	<response direction="received" method="INVITE" code="180" time="7000" callid="SESSION_2" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Supported"><![CDATA[100rel, replaces]]></header>
+			<header name="Call-ID"><![CDATA[SESSION_2]]></header>
+			<header name="Require"><![CDATA[100rel]]></header>
+		</message>
+	</response>
+	
+	<response direction="sent" method="INVITE" code="180" time="7000" callid="SESSION_1" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Require"><![CDATA[100rel]]></header>
+			<header name="Supported"><![CDATA[100rel, replaces]]></header>
+			<header name="Call-ID"><![CDATA[SESSION_1]]></header>
+		</message>
+	</response>
+	
+	<request direction="received" method="PRACK" time="7000" callid="SESSION_1" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Call-ID"><![CDATA[SESSION_1]]></header>
+			<header name="Supported"><![CDATA[100rel, replaces]]></header>
+		</message>
+	</request>
+	
+	<request direction="sent" method="PRACK" time="10000" callid="SESSION_2" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Call-ID"><![CDATA[SESSION_2]]></header>
+			<header name="Supported"><![CDATA[100rel, replaces]]></header>
+		</message>
+	</request>
+	
+	<response direction="received" method="PRACK" code="200" time="12000" callid="SESSION_2" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Call-ID"><![CDATA[SESSION_2]]></header>
+		</message>
+	</response>
+	
+	<response direction="sent" method="PRACK" code="200" time="16000" callid="SESSION_1" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Call-ID"><![CDATA[SESSION_1]]></header>
+		</message>
+	</response>
+	
+	
+	<response direction="received" method="INVITE" code="200" time="17000" callid="SESSION_2" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Content-Type"><![CDATA[application/sdp]]></header>
+			<header name="Call-ID"><![CDATA[SESSION_2]]></header>
+			<header name="Supported"><![CDATA[100rel, replaces]]></header>
+			<header name="Content"><![CDATA[v=0
+o=anonymous 1246607915 1246607914 IN IP4 10.194.124.94
+s=-
+i=eConf5.0.7
+c=IN IP4 10.194.124.94
+b=AS:256
+t=0 0
+m=audio 6000 RTP/AVP 8 0 18 101
+a=rtpmap:8 PCMA/8000
+a=sendrecv
+a=rtpmap:0 PCMU/8000
+a=rtpmap:18 G729/8000
+a=fmtp:18 annexb=yes
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-15
+]]></header>
+		</message>
+	</response>
+	
+	<request direction="sent" method="ACK" time="17000" callid="SESSION_2" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Call-ID"><![CDATA[SESSION_2]]></header>
+		</message>
+	</request>
+	
+	<response direction="sent" method="INVITE" code="200" time="17000" callid="SESSION_1" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Content-Type"><![CDATA[application/sdp]]></header>
+			<header name="Call-ID"><![CDATA[SESSION_1]]></header>
+			<header name="Content"><![CDATA[v=0
+o=anonymous 1246607915 1246607914 IN IP4 10.194.124.94
+s=-
+i=eConf5.0.7
+c=IN IP4 10.194.124.94
+b=AS:256
+t=0 0
+m=audio 6000 RTP/AVP 8 0 18 101
+a=rtpmap:8 PCMA/8000
+a=sendrecv
+a=rtpmap:0 PCMU/8000
+a=rtpmap:18 G729/8000
+a=fmtp:18 annexb=yes
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-15
+]]></header>
+		</message>
+	</response>
+	<request direction="received" method="ACK" time="17000" callid="SESSION_1" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<requesturi value="sip:app-76qgjawmlpan@10.194.124.241"/>
+			<header name="To"><![CDATA[<sip:0875600601@10.194.124.162>;tag=2affc4a1]]></header>
+			<header name="Via"><![CDATA[SIP/2.0/UDP 10.194.124.162;branch=z9hG4bKc304.232653c3.2]]></header>
+			<header name="Via"><![CDATA[SIP/2.0/UDP 10.194.128.193:5060;branch=z9hG4bK_00D0E90207E0_T22B1072C]]></header>
+			<header name="CSeq"><![CDATA[1 ACK]]></header>
+			<header name="Content-Length"><![CDATA[0]]></header>
+			<header name="Route"><![CDATA[<sip:10.194.124.162;lr>]]></header>
+			<header name="Call-ID"><![CDATA[CALL_ID75_00D0E90207E0_T610610042@10.194.128.193]]></header>
+			<header name="User-Agent"><![CDATA[VOIP P170S 01.31.10]]></header>
+			<header name="Max-Forwards"><![CDATA[69]]></header>
+			<header name="From"><![CDATA[0875600602 <sip:0875600602@10.194.124.162>;tag=00D0E90207E0_T1806268845]]></header>
+			<header name="Contact"><![CDATA[<sip:0875600602@10.194.128.193:5060>]]></header>
+		</message>
+	</request>
+
+
+
+	<request direction="received" method="INVITE" time="23000" callid="SESSION_1" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Allow"><![CDATA[ACK, BYE, CANCEL, INVITE, NOTIFY, REFER, DO, UPDATE, OPTIONS, SUBSCRIBE, PRACK, INFO]]></header>
+			<header name="Call-ID"><![CDATA[SESSION_1]]></header>
+			<header name="Content-Type"><![CDATA[application/sdp]]></header>
+			<header name="Supported"><![CDATA[100rel, timer, replaces]]></header>
+			<header name="Content"><![CDATA[v=0
+o=- 162620233 162620234 IN IP4 10.194.128.193
+s=VOIP P170S 01.31.10
+c=IN IP4 10.194.128.193
+t=0 0
+m=audio 41000 RTP/AVP 0 8 18 101
+a=rtpmap:0 PCMU/8000/1
+a=rtpmap:8 PCMA/8000/1
+a=rtpmap:18 G729/8000/1
+a=fmtp:18 annexb=no
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-15
+a=sendrecv
+]]></header>
+		</message>
+	</request>
+	<request direction="sent" method="INVITE" time="25000" callid="SESSION_2" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Content-Type"><![CDATA[application/sdp]]></header>
+			<header name="Call-ID"><![CDATA[SESSION_2]]></header>
+			<header name="Supported"><![CDATA[100rel, timer, replaces]]></header>
+			<header name="Content"><![CDATA[v=0
+o=- 162620233 162620234 IN IP4 10.194.128.193
+s=VOIP P170S 01.31.10
+c=IN IP4 10.194.128.193
+t=0 0
+m=audio 41000 RTP/AVP 0 8 18 101
+a=rtpmap:0 PCMU/8000/1
+a=rtpmap:8 PCMA/8000/1
+a=rtpmap:18 G729/8000/1
+a=fmtp:18 annexb=no
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-15
+a=sendrecv
+]]></header>
+		</message>
+	</request>
+	<response direction="received" method="INVITE" code="183" time="25100" callid="SESSION_2" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Supported"><![CDATA[100rel, replaces]]></header>
+			<header name="Call-ID"><![CDATA[SESSION_2]]></header>
+			<header name="Require"><![CDATA[100rel]]></header>
+		</message>
+	</response>
+	
+	<response direction="sent" method="INVITE" code="183" time="25100" callid="SESSION_1" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Require"><![CDATA[100rel]]></header>
+			<header name="Supported"><![CDATA[100rel, replaces]]></header>
+			<header name="Call-ID"><![CDATA[SESSION_1]]></header>
+		</message>
+	</response>
+	
+	<request direction="received" method="PRACK" time="25100" callid="SESSION_1" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Call-ID"><![CDATA[SESSION_1]]></header>
+			<header name="Supported"><![CDATA[100rel, replaces]]></header>
+		</message>
+	</request>
+	
+	<request direction="sent" method="PRACK" time="25100" callid="SESSION_2" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Call-ID"><![CDATA[SESSION_2]]></header>
+			<header name="Supported"><![CDATA[100rel, replaces]]></header>
+		</message>
+	</request>
+	
+	<response direction="received" method="PRACK" code="200" time="25100" callid="SESSION_2" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Call-ID"><![CDATA[SESSION_2]]></header>
+		</message>
+	</response>
+	
+	<response direction="sent" method="PRACK" code="200" time="25200" callid="SESSION_1" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Call-ID"><![CDATA[SESSION_1]]></header>
+		</message>
+	</response>
+	
+	
+	<response direction="received" method="INVITE" code="200" time="25300" callid="SESSION_2" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Content-Type"><![CDATA[application/sdp]]></header>
+			<header name="Call-ID"><![CDATA[SESSION_2]]></header>
+			<header name="Supported"><![CDATA[100rel, replaces]]></header>
+			<header name="Content"><![CDATA[v=0
+o=anonymous 1246607915 1246607915 IN IP4 10.194.124.94
+s=-
+i=eConf5.0.7
+c=IN IP4 10.194.124.94
+b=AS:256
+t=0 0
+m=audio 6000 RTP/AVP 8 0 18 101
+a=rtpmap:8 PCMA/8000
+a=sendrecv
+a=rtpmap:0 PCMU/8000
+a=rtpmap:18 G729/8000
+a=fmtp:18 annexb=yes
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-15
+]]></header>
+		</message>
+	</response>
+	
+	<request direction="sent" method="ACK" time="28300" callid="SESSION_2" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Call-ID"><![CDATA[SESSION_2]]></header>
+		</message>
+	</request>
+	
+	<response direction="sent" method="INVITE" code="200" time="28300" callid="SESSION_1" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<header name="Content-Type"><![CDATA[application/sdp]]></header>
+			<header name="Call-ID"><![CDATA[SESSION_1]]></header>
+			<header name="Content"><![CDATA[v=0
+o=anonymous 1246607915 1246607915 IN IP4 10.194.124.94
+s=-
+i=eConf5.0.7
+c=IN IP4 10.194.124.94
+b=AS:256
+t=0 0
+m=audio 6000 RTP/AVP 8 0 18 101
+a=rtpmap:8 PCMA/8000
+a=sendrecv
+a=rtpmap:0 PCMU/8000
+a=rtpmap:18 G729/8000
+a=fmtp:18 annexb=yes
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-15
+]]></header>
+		</message>
+	</response>
+	<request direction="received" method="ACK" time="28400" callid="SESSION_1" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<requesturi value="sip:app-76qgjawmlpan@10.194.124.241"/>
+			<header name="To"><![CDATA[<sip:0875600601@10.194.124.162>;tag=2affc4a1]]></header>
+			<header name="Via"><![CDATA[SIP/2.0/UDP 10.194.124.162;branch=z9hG4bKc304.232653c3.2]]></header>
+			<header name="Via"><![CDATA[SIP/2.0/UDP 10.194.128.193:5060;branch=z9hG4bK_00D0E90207E0_T22B1072C]]></header>
+			<header name="CSeq"><![CDATA[1 ACK]]></header>
+			<header name="Content-Length"><![CDATA[0]]></header>
+			<header name="Route"><![CDATA[<sip:10.194.124.162;lr>]]></header>
+			<header name="Call-ID"><![CDATA[CALL_ID75_00D0E90207E0_T610610042@10.194.128.193]]></header>
+			<header name="User-Agent"><![CDATA[VOIP P170S 01.31.10]]></header>
+			<header name="Max-Forwards"><![CDATA[69]]></header>
+			<header name="From"><![CDATA[0875600602 <sip:0875600602@10.194.124.162>;tag=00D0E90207E0_T1806268845]]></header>
+			<header name="Contact"><![CDATA[<sip:0875600602@10.194.128.193:5060>]]></header>
+		</message>
+	</request>
+
+
+
+
+
+
+	<request direction="received" method="BYE" time="35000" callid="SESSION_2" from="sip:0875600601@10.194.124.162" to="sip:0875600602@10.194.124.162">
+		<message>
+			<header name="Call-ID"><![CDATA[SESSION_2]]></header>
+		</message>
+	</request>
+	<response direction="sent" method="BYE" code="200" time="35000" callid="SESSION_2" from="sip:0875600601@10.194.124.162" to="sip:0875600602@10.194.124.162">
+		<message>
+			<header name="Call-ID"><![CDATA[SESSION_1]]></header>
+		</message>
+	</response>
+
+	<request direction="sent" method="BYE" time="35000" callid="SESSION_1" from="sip:0875600601@10.194.124.162" to="sip:0875600602@10.194.124.162">
+		<message>
+			<header name="Call-ID"><![CDATA[SESSION_1]]></header>
+		</message>
+	</request>
+	<response direction="received" method="BYE" code="200" time="35000" callid="SESSION_1" from="sip:0875600601@10.194.124.162" to="sip:0875600602@10.194.124.162">
+		<message>
+			<header name="Call-ID"><![CDATA[SESSION_1]]></header>
+		</message>
+	</response>
+
+</callflow>

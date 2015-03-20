@@ -1,0 +1,147 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.fjl.test.tools</groupId>
+		<artifactId>test-tools-main</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>test-tools-package</artifactId>
+	<name>Test Tools Packaging Project</name>
+	<description>Test Tools Packaging Project</description>
+	<packaging>pom</packaging>
+	<properties>
+		<!-- ### Packaging config ### -->
+		<project.main.package>com/fjl/test/tools/</project.main.package>
+	</properties>
+
+
+	<dependencies>
+
+		<dependency>
+			<groupId>com.fjl.test.tools</groupId>
+			<artifactId>test-sip-stack</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fjl.test.tools</groupId>
+			<artifactId>test-tools-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fjl.test.tools</groupId>
+			<artifactId>test-tools-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.fjl.test.tools</groupId>
+			<artifactId>test-tools-sip</artifactId>
+		</dependency>
+		<!-- Logback dependency -->
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>log4j-over-slf4j</artifactId>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<plugins>
+			<!-- <plugin> <artifactId>maven-resources-plugin</artifactId> <version>2.7</version> 
+				<executions> <execution> <id>copy-resources</id> <phase>generate-sources</phase> 
+				<goals> <goal>copy-resources</goal> </goals> <configuration> <outputDirectory>${basedir}/target/</outputDirectory> 
+				<resources> <resource> <directory>src/main/scripts</directory> <includes> 
+				<include>run_test.sh</include> <include>run_test.bat</include> </includes> 
+				</resource> </resources> </configuration> </execution> </executions> </plugin> -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>build-classpath</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>build-classpath</goal>
+						</goals>
+						<configuration>
+
+							<outputFile>${project.build.directory}/classpath_linux.txt</outputFile>
+							<prefix>lib</prefix>
+
+
+						</configuration>
+					</execution>
+					<execution>
+						<id>build-classpath2</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>build-classpath</goal>
+						</goals>
+						<configuration>
+
+							<outputFile>${project.build.directory}/classpath_windows.txt</outputFile>
+							<fileSeparator>\</fileSeparator>
+							<pathSeparator>;</pathSeparator>
+							<prefix>lib</prefix>
+
+						</configuration>
+					</execution>
+					<execution>
+						<id>copy-dependencies</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy-dependencies</goal>
+
+						</goals>
+						<configuration>
+							<!-- configure the plugin here -->
+							<outputDirectory>${project.build.directory}/lib</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-antrun-plugin</artifactId> 
+				<version>1.7</version> <executions> <execution> <phase>package</phase> <goals> 
+				<goal>run</goal> </goals> <configuration> <tasks> <echoproperties /> </tasks> 
+				</configuration> </execution> </executions> </plugin> -->
+
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<!-- Build package tar -->
+
+
+					<appendAssemblyId>false</appendAssemblyId>
+					<descriptors>
+						<descriptor>src/assembly/config.xml</descriptor>
+					</descriptors>
+				</configuration>
+				<executions>
+					<execution>
+						<id>make-package</id> <!-- this is used for inheritance merges -->
+						<phase>install</phase> <!-- append to the packaging phase. -->
+						<goals>
+							<goal>single</goal> <!-- goals == mojos -->
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+	<developers>
+		<developer>
+			<id>ofli8276</id>
+			<name>Francois-Joseph LEVEE</name>
+			<email>francoisjoseph.levee@orange.com</email>
+			<organization>orange</organization>
+			<organizationUrl>http://www.orange.com</organizationUrl>
+			<roles>
+				<role>Java Developer</role>
+			</roles>
+		</developer>
+	</developers>
+
+
+</project>

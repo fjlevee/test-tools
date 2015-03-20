@@ -1,0 +1,1 @@
+java -cp `type classpath_windows.txt` com.fjl.test.tools.run.TestToolsMain

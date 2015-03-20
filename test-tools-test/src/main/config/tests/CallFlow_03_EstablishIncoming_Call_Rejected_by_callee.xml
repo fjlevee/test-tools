@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<callflow id="app-11c91d6dtbjxj|CALL_ID69_00D0E90207E0_T2030537664@10.194.128.193|-6eee7f0af63b61c8" time="1246522330589">
+	<comment><![CDATA[Ceci est un test de commentaire CallFlow_03_EstablishIncoming_Call_Rejected_by_callee]]>
+	</comment>
+	<http method="get" time="1246522325336">
+		<param name="incomingCallAction" value="handle"/>
+		<param name="debuggerActivated" value="on"/>
+		<param name="action" value="saveParameters"/>
+		<param name="forkingList" value="sip:0875600603@10.194.124.162"/>
+		<param name="callTimer" value="15000"/>
+		<param name="reroute" value="sip:0875600603@10.194.124.162"/>
+	</http>
+	<request direction="received" method="INVITE" ifctype="ORIGINATING_REGISTERED" time="1246522330589" callid="CALL_ID69_00D0E90207E0_T2030537664@10.194.128.193" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<requesturi value="sip:0875600601@10.194.124.162"/>
+			<header name="Content-Type"><![CDATA[application/sdp]]></header>
+			<header name="To"><![CDATA[<sip:0875600601@10.194.124.162>]]></header>
+			<header name="Via"><![CDATA[SIP/2.0/UDP 10.194.124.162;branch=z9hG4bKd7e6.c6377fa3.0]]></header>
+			<header name="Via"><![CDATA[SIP/2.0/UDP 10.194.128.193:5060;branch=z9hG4bK_00D0E90207E0_T10A9F717]]></header>
+			<header name="Record-Route"><![CDATA[<sip:10.194.124.162;lr>]]></header>
+			<header name="Allow"><![CDATA[ACK, BYE, CANCEL, INVITE, NOTIFY, REFER, DO, UPDATE, OPTIONS, SUBSCRIBE, PRACK, INFO]]></header>
+			<header name="Call-ID"><![CDATA[CALL_ID69_00D0E90207E0_T2030537664@10.194.128.193]]></header>
+			<header name="User-Agent"><![CDATA[VOIP P170S 01.31.10]]></header>
+			<header name="From"><![CDATA[0875600602 <sip:0875600602@10.194.124.162>;tag=00D0E90207E0_T387209991]]></header>
+			<header name="Max-Forwards"><![CDATA[69]]></header>
+			<header name="Contact"><![CDATA[<sip:0875600602@10.194.128.193:5060>]]></header>
+			<header name="Session-Expires"><![CDATA[1800]]></header>
+			<header name="Wlss-Popped-Route"><![CDATA[<sip:10.194.124.241:5060;lr;call=orig>]]></header>
+			<header name="Originating-1"><![CDATA[active]]></header>
+			<header name="CSeq"><![CDATA[1 INVITE]]></header>
+			<header name="Content-Length"><![CDATA[297]]></header>
+			<header name="Route"><![CDATA[<sip:10.194.124.162:5060;lr>]]></header>
+			<header name="Supported"><![CDATA[100rel, timer, replaces]]></header>
+			<header name="Content"><![CDATA[v=0
+o=- 76851423 76851423 IN IP4 10.194.128.193
+s=VOIP P170S 01.31.10
+c=IN IP4 10.194.128.193
+t=0 0
+m=audio 41000 RTP/AVP 0 8 18 101
+a=rtpmap:0 PCMU/8000/1
+a=rtpmap:8 PCMA/8000/1
+a=rtpmap:18 G729/8000/1
+a=fmtp:18 annexb=no
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-15
+a=sendrecv
+]]></header>
+		</message>
+	</request>
+	<callnotification event="incomingCall" time="1246522330591" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162" ifctype="ORIGINATING_REGISTERED" />
+	<callcontrol method="createIncomingCall" time="1246522330593" subcall="SUBCALL_1" leg1="LEG_1" leg1sipuri="sip:0875600602@10.194.124.162" leg2="LEG_2" leg2sipuri="sip:0875600601@10.194.124.162" />
+	<request direction="sent" method="INVITE" time="1246522330594" callid="wlss-f5b2e12c-CALL_ID69_00D0E90207E0_T2030537664@10.194.128.193" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<requesturi value="sip:0875600601@10.194.124.162"/>
+			<header name="Content-Type"><![CDATA[application/sdp]]></header>
+			<header name="To"><![CDATA[sip:0875600601@10.194.124.162]]></header>
+			<header name="Via"><![CDATA[SIP/2.0/UDP 10.194.124.241:5060;wlsscid=-6eee7f0af63b61c8;branch=z9hG4bK04896f239800997b776057e561e101bd]]></header>
+			<header name="Allow"><![CDATA[ACK, BYE, CANCEL, INVITE, NOTIFY, REFER, DO, UPDATE, OPTIONS, SUBSCRIBE, PRACK, INFO]]></header>
+			<header name="Call-ID"><![CDATA[wlss-f5b2e12c-CALL_ID69_00D0E90207E0_T2030537664@10.194.128.193]]></header>
+			<header name="User-Agent"><![CDATA[VOIP P170S 01.31.10]]></header>
+			<header name="From"><![CDATA[<sip:0875600602@10.194.124.162>;tag=0b100100]]></header>
+			<header name="Max-Forwards"><![CDATA[70]]></header>
+			<header name="Contact"><![CDATA[<sip:10.194.124.241:5060;transport=udp;wlsscid=-6eee7f0af63b61c8;sipappsessionid=app-11c91d6dtbjxj>]]></header>
+			<header name="Session-Expires"><![CDATA[1800]]></header>
+			<header name="CSeq"><![CDATA[1 INVITE]]></header>
+			<header name="Originating-1"><![CDATA[active]]></header>
+			<header name="Content-Length"><![CDATA[297]]></header>
+			<header name="Route"><![CDATA[<sip:10.194.124.162:5060;lr>]]></header>
+			<header name="Supported"><![CDATA[100rel, timer, replaces]]></header>
+			<header name="Content"><![CDATA[v=0
+o=- 76851423 76851423 IN IP4 10.194.128.193
+s=VOIP P170S 01.31.10
+c=IN IP4 10.194.128.193
+t=0 0
+m=audio 41000 RTP/AVP 0 8 18 101
+a=rtpmap:0 PCMU/8000/1
+a=rtpmap:8 PCMA/8000/1
+a=rtpmap:18 G729/8000/1
+a=fmtp:18 annexb=no
+a=rtpmap:101 telephone-event/8000
+a=fmtp:101 0-15
+a=sendrecv
+]]></header>
+		</message>
+	</request>
+	<response direction="received" method="INVITE" code="180" time="1246522330704" callid="wlss-f5b2e12c-CALL_ID69_00D0E90207E0_T2030537664@10.194.128.193" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<responseuri value="SIP/2.0 180 Ringing"/>
+			<header name="To"><![CDATA[<sip:0875600601@10.194.124.162>;tag=d30df731]]></header>
+			<header name="Via"><![CDATA[SIP/2.0/UDP 10.194.124.241:5060;wlsscid=-6eee7f0af63b61c8;branch=z9hG4bK04896f239800997b776057e561e101bd;received=10.194.124.162]]></header>
+			<header name="Record-Route"><![CDATA[<sip:10.194.124.162;lr>]]></header>
+			<header name="CSeq"><![CDATA[1 INVITE]]></header>
+			<header name="Content-Length"><![CDATA[0]]></header>
+			<header name="Call-ID"><![CDATA[wlss-f5b2e12c-CALL_ID69_00D0E90207E0_T2030537664@10.194.128.193]]></header>
+			<header name="User-Agent"><![CDATA[X-Lite release 1103d stamp 53117]]></header>
+			<header name="From"><![CDATA[<sip:0875600602@10.194.124.162>;tag=0b100100]]></header>
+			<header name="Contact"><![CDATA[<sip:0875600601@10.194.124.94:53238;rinstance=1259f0452c1c89ac>]]></header>
+		</message>
+	</response>
+	<callnotification event="provisionalResponseReceived" time="1246522330705" subcall="SUBCALL_1" leg="LEG_2" code="180" />
+	<response direction="sent" method="INVITE" code="180" time="1246522330706" callid="CALL_ID69_00D0E90207E0_T2030537664@10.194.128.193" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<responseuri value="SIP/2.0 180 Ringing"/>
+			<header name="To"><![CDATA[<sip:0875600601@10.194.124.162>;tag=17c8a88c]]></header>
+			<header name="Via"><![CDATA[SIP/2.0/UDP 10.194.124.162;branch=z9hG4bKd7e6.c6377fa3.0]]></header>
+			<header name="Via"><![CDATA[SIP/2.0/UDP 10.194.128.193:5060;branch=z9hG4bK_00D0E90207E0_T10A9F717]]></header>
+			<header name="Record-Route"><![CDATA[<sip:10.194.124.162;lr>]]></header>
+			<header name="CSeq"><![CDATA[1 INVITE]]></header>
+			<header name="Content-Length"><![CDATA[0]]></header>
+			<header name="Call-ID"><![CDATA[CALL_ID69_00D0E90207E0_T2030537664@10.194.128.193]]></header>
+			<header name="From"><![CDATA[0875600602 <sip:0875600602@10.194.124.162>;tag=00D0E90207E0_T387209991]]></header>
+		</message>
+	</response>
+	<response direction="received" method="INVITE" code="480" time="1246522331913" callid="wlss-f5b2e12c-CALL_ID69_00D0E90207E0_T2030537664@10.194.128.193" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<responseuri value="SIP/2.0 480 Temporarily Unavailable"/>
+			<header name="To"><![CDATA[<sip:0875600601@10.194.124.162>;tag=d30df731]]></header>
+			<header name="Via"><![CDATA[SIP/2.0/UDP 10.194.124.241:5060;wlsscid=-6eee7f0af63b61c8;branch=z9hG4bK04896f239800997b776057e561e101bd;received=10.194.124.162]]></header>
+			<header name="CSeq"><![CDATA[1 INVITE]]></header>
+			<header name="Content-Length"><![CDATA[0]]></header>
+			<header name="Call-ID"><![CDATA[wlss-f5b2e12c-CALL_ID69_00D0E90207E0_T2030537664@10.194.128.193]]></header>
+			<header name="User-Agent"><![CDATA[X-Lite release 1103d stamp 53117]]></header>
+			<header name="From"><![CDATA[<sip:0875600602@10.194.124.162>;tag=0b100100]]></header>
+			<header name="Warning"><![CDATA[399 devnull "User reject"]]></header>
+		</message>
+	</response>
+	<request direction="sent" method="ACK" time="1246522331913" callid="wlss-f5b2e12c-CALL_ID69_00D0E90207E0_T2030537664@10.194.128.193" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162" auto="true">
+	</request>
+	<callnotification event="callEstablishmentError" time="1246522331914" leg="LEG_2" code="480" />
+	<response direction="sent" method="INVITE" code="480" time="1246522331915" callid="CALL_ID69_00D0E90207E0_T2030537664@10.194.128.193" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162">
+		<message>
+			<responseuri value="SIP/2.0 480 Temporarily Unavailable"/>
+			<header name="To"><![CDATA[<sip:0875600601@10.194.124.162>;tag=17c8a88c]]></header>
+			<header name="Via"><![CDATA[SIP/2.0/UDP 10.194.124.162;branch=z9hG4bKd7e6.c6377fa3.0]]></header>
+			<header name="Via"><![CDATA[SIP/2.0/UDP 10.194.128.193:5060;branch=z9hG4bK_00D0E90207E0_T10A9F717]]></header>
+			<header name="CSeq"><![CDATA[1 INVITE]]></header>
+			<header name="Content-Length"><![CDATA[0]]></header>
+			<header name="Call-ID"><![CDATA[CALL_ID69_00D0E90207E0_T2030537664@10.194.128.193]]></header>
+			<header name="From"><![CDATA[0875600602 <sip:0875600602@10.194.124.162>;tag=00D0E90207E0_T387209991]]></header>
+		</message>
+	</response>
+	<request direction="received" method="ACK" time="1246522331915" callid="CALL_ID69_00D0E90207E0_T2030537664@10.194.128.193" from="sip:0875600602@10.194.124.162" to="sip:0875600601@10.194.124.162" auto="true">
+	</request>
+	<callnotification event="callClosed" time="1246522331916" />
+</callflow>

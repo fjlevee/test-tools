@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!-- ====================================================================== -->
+<!-- Project build of SipCLient.										-->
+<!-- 																		-->
+<!-- 																		-->
+<!-- ====================================================================== -->
+<project name="Build_1_SipClientStack" default="default">
+
+	<!-- File name for build project properties -->
+	<property name="build.properties.file" value="build_fjl_sip_stack.properties" />
+	<!-- Load the build properties -->
+	<loadproperties srcfile="${build.properties.file}" />
+
+	<!-- ant classpath for ant contrib task -->
+	<path id="ant.contrib.classpath">
+		<fileset dir="${ant.contrib.lib.directory}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+
+	<!-- ant contrib task definition -->
+	<taskdef name="if" classname="net.sf.antcontrib.logic.IfTask" classpathref="ant.contrib.classpath" />
+	<taskdef name="for" classname="net.sf.antcontrib.logic.ForTask" classpathref="ant.contrib.classpath" />
+
+	<!-- ================================== -->
+	<!--  macro: compile					-->
+	<!-- ================================== -->
+
+	<macrodef name="compile">
+		<attribute name="srcdir" />
+		<attribute name="destdir" />
+		<attribute name="classpathref" />
+		<attribute name="debug" default="${project.compilation.debug}" />
+		<attribute name="deprecation" default="${project.compilation.deprecation}" />
+		<attribute name="optimize" default="${project.compilation.optimize}" />
+		<attribute name="target" default="${project.compilation.java.target}" />
+		<attribute name="source" default="${project.compilation.java.source}" />
+		<sequential>
+			<delete dir="@{destdir}" includeEmptyDirs="true" />
+			<mkdir dir="@{destdir}" />
+			<javac srcdir="@{srcdir}" destdir="@{destdir}" classpathref="@{classpathref}" debug="@{debug}" deprecation="@{deprecation}" optimize="@{optimize}" target="@{target}" source="@{source}" />
+		</sequential>
+	</macrodef>
+
+	<!-- ================================== -->
+	<!--  macro: makeJavadoc				-->
+	<!-- ================================== -->
+	<macrodef name="makeJavadoc">
+		<attribute name="destdir" />
+		<attribute name="srcdir" />
+		<attribute name="packagenames" />
+		<attribute name="doctitle" default="${project.javadoc.title}" />
+		<attribute name="header" default="${project.javadoc.header}" />
+		<attribute name="bottom" default="${project.javadoc.bottom}" />
+
+		<sequential>
+			<delete dir="@{destdir}" includeEmptyDirs="true" />
+			<mkdir dir="@{destdir}" />
+			<javadoc sourcepath="@{srcdir}" destdir="@{destdir}" packagenames="@{packagenames}">
+				<doctitle>@{doctitle}</doctitle>
+				<header>@{header}</header>
+				<bottom>@{bottom}</bottom>
+			</javadoc>
+		</sequential>
+	</macrodef>
+
+	<!-- ================================== -->
+	<!--  macro: makeZipFile				-->
+	<!-- ================================== -->
+	<macrodef name="makeZipFile">
+		<attribute name="destfile" />
+		<attribute name="builddir" />
+		<attribute name="resources" />
+		<attribute name="librairies" />
+		<sequential>
+			<delete dir="@{builddir}" includeEmptyDirs="true" />
+			<mkdir dir="@{builddir}" />
+			<mkdir dir="@{builddir}/lib" />
+			<mkdir dir="@{builddir}/logs" />
+			<copy todir="@{builddir}">
+				<fileset dir="${project.distribution.directory}">
+					<include name="${project.package.file}" />
+				</fileset>
+			</copy>
+			<copy todir="@{builddir}">
+				<fileset dir="@{resources}">
+					<include name="**/*" />
+				</fileset>
+			</copy>
+			<copy todir="@{buildDir}/lib">
+				<fileset dir="@{librairies}">
+					<include name="**/*.jar" />
+				</fileset>
+			</copy>
+			<zip destfile="@{destfile}" basedir="@{builddir}" update="true" />
+			<delete dir="@{builddir}" includeEmptyDirs="true" />
+		</sequential>
+	</macrodef>
+	<!-- ================================== -->
+	<!--  macro: makeExecutionDir			-->
+	<!-- ================================== -->
+	<macrodef name="makeExecutionDir">
+		<attribute name="executionDir" />
+		<attribute name="resources" />
+		<attribute name="librairies" />
+		<sequential>
+			<!--<delete dir="@{executionDir}" includeEmptyDirs="true" />-->
+			<delete>
+				<fileset dir="@{executionDir}">
+					<include name="**/*" />
+				</fileset>
+			</delete>
+			<mkdir dir="@{executionDir}" />
+			<mkdir dir="@{executionDir}/lib" />
+			<mkdir dir="@{executionDir}/logs" />
+			<copy todir="@{executionDir}">
+				<fileset dir="${project.distribution.directory}">
+					<include name="${project.package.file}" />
+				</fileset>
+			</copy>
+			<copy todir="@{executionDir}">
+				<fileset dir="@{resources}">
+					<include name="**/*" />
+				</fileset>
+			</copy>
+			<copy todir="@{executionDir}/lib">
+				<fileset dir="@{librairies}">
+					<include name="**/*.jar" />
+				</fileset>
+			</copy>
+		</sequential>
+	</macrodef>
+	<!-- ================================== -->
+	<!--  macro: packageAsJar				-->
+	<!-- ================================== -->
+	<macrodef name="packageAsJar">
+		<attribute name="jarFileName" />
+		<attribute name="contentRootDir" />
+		<attribute name="buildBy" default="${user.name}" />
+		<attribute name="mainPackage" />
+		<attribute name="projectName" default="${project.name}" />
+		<attribute name="projectSpecificationRelease" default="${project.specification.release}" />
+		<attribute name="projectImplementationRelease" default="${project.release}" />
+		<attribute name="projectCompany" default="${project.company.name}" />
+		<attribute name="isSealed" default="${project.is.sealed}" />
+		<sequential>
+
+			<!-- Copy classes to -->
+			<copy todir="${project.building.directory}/${project.packaging.directory.name}">
+				<fileset dir="${project.building.directory}/${project.classes.directory.name}">
+					<include name="**/*.class" />
+				</fileset>
+			</copy>
+
+			<!-- Copy configuration files to /WEB-INF/classes directory -->
+			<if>
+				<available file="${project.building.directory}/${project.configuration.directory.name}" />
+				<then>
+					<copy todir="${project.building.directory}/${project.packaging.directory.name}">
+						<fileset dir="${project.building.directory}/${project.configuration.directory.name}">
+							<include name="*.*" />
+						</fileset>
+					</copy>
+				</then>
+			</if>
+			<!-- Copy resources files to built resources directory -->
+			<if>
+				<available file="${project.building.directory}/${project.resources.directory.name}" />
+				<then>
+					<copy todir="${project.building.directory}/${project.packaging.directory.name}/${project.resources.directory.name}">
+
+						<fileset dir="${project.building.directory}/${project.resources.directory.name}">
+							<include name="*/**" />
+						</fileset>
+					</copy>
+				</then>
+			</if>
+			<jar destfile="@{jarFileName}" basedir="@{contentRootDir}">
+				<manifest>
+					<attribute name="Build-by" value="@{buildBy}" />
+					<section name="@{mainPackage}">
+						<attribute name="Sealed" value="@{isSealed}" />
+						<attribute name="Specification-Title" value="@{projectName}" />
+						<attribute name="Specification-Version" value="@{projectSpecificationRelease}" />
+						<attribute name="Specification-Vendor" value="@{projectCompany}" />
+						<attribute name="Implementation-Title" value="@{projectName}" />
+						<attribute name="Implementation-Version" value="@{projectImplementationRelease}" />
+						<attribute name="Implementation-Vendor" value="@{projectCompany}" />
+					</section>
+				</manifest>
+			</jar>
+			<delete dir="@{contentRootDir}" includeEmptyDirs="true" />
+		</sequential>
+	</macrodef>
+
+
+
+	<!-- ================================== -->
+	<!--  target: default					-->
+	<!-- ================================== -->
+	<target name="default" depends="publish" description="--> description">
+
+	</target>
+
+	<!-- ================================== -->
+	<!--  target: init environment      	-->
+	<!-- ================================== -->
+	<target name="init">
+		<echo message="Start Development build of project ${project.name}" />
+		<property name="project.building.directory" value=".." />
+		<property name="project.distribution.directory" value="${project.development.root.directory}/${project.distribution.directory.name}" />
+		<property name="project.package.file" value="${project.packaging.file.name}" />
+	</target>
+	<!-- ================================== -->
+	<!--  target: clean environment      	-->
+	<!-- ================================== -->
+	<target name="clean" depends="init">
+		<echo message="Start Development build of project ${project.name}" />
+		<!--<delete dir="${project.distribution.directory}" includeEmptyDirs="true" />-->
+		<delete file="${project.distribution.directory}" />
+	</target>
+
+	<!-- ================================== -->
+	<!--  target: prepare environment      	-->
+	<!-- ================================== -->
+	<target name="prepare" depends="clean">
+		<mkdir dir="${project.distribution.directory}" />
+	</target>
+
+
+
+	<!-- ================================== -->
+	<!--  target: compile					-->
+	<!-- ================================== -->
+	<target name="compile" depends="prepare" description="Compile the project">
+
+		<if>
+			<available file="${project.development.root.directory}/${project.compilation.lib.directory.name}" property="compilation" />
+			<then>
+				<!-- Project compilation dependencies classpath -->
+				<path id="project.compilation.dependencies.classpath">
+					<fileset dir="${project.development.root.directory}/${project.compilation.lib.directory.name}">
+						<include name="*.jar" />
+					</fileset>
+				</path>
+			</then>
+			<else>
+				<path id="project.compilation.dependencies.classpath" />
+			</else>
+		</if>
+
+		<if>
+			<available file="${root.project.directory}/${project.runtime.lib.directory.name}" property="runtime" />
+			<then>
+				<!-- Project runtime dependencies classpath -->
+				<path id="project.runtime.dependencies.classpath">
+					<fileset dir="${project.development.root.directory}/${project.runtime.lib.directory.name}">
+						<include name="*.jar" />
+					</fileset>
+				</path>
+			</then>
+			<else>
+				<path id="project.runtime.dependencies.classpath" />
+			</else>
+		</if>
+
+		<!-- Project compilation classpath -->
+		<path id="project.compilation.classpath">
+			<path refid="project.compilation.dependencies.classpath" />
+			<path refid="project.runtime.dependencies.classpath" />
+		</path>
+
+		<compile srcdir="${project.building.directory}/${project.sources.directory.name}" destdir="${project.building.directory}/${project.classes.directory.name}" classpathref="project.compilation.classpath" />
+	</target>
+
+	<!-- ================================== -->
+	<!--  target: packageProject			-->
+	<!-- ================================== -->
+	<target name="packageProject" depends="compile" description="Package the project">
+		<echo message="Start packaging project" />
+		<!-- Package as a single Jar -->
+		<packageAsJar jarFileName="${project.distribution.directory}/${project.package.file}" contentRootDir="${project.building.directory}/${project.packaging.directory.name}" mainPackage="${project.main.package}" />
+
+	</target>
+
+	<!-- ================================== -->
+	<!--  target: publish environment      	-->
+	<!-- ================================== -->
+	<target name="publish" depends="packageProject" description="Publish the project">
+		<echo message="Start publishing project" />
+		<copy todir="${project.development.root.directory}/lib">
+			<fileset dir="${project.distribution.directory}">
+				<include name="${project.package.file}" />
+			</fileset>
+		</copy>
+	</target>
+
+
+	<!-- ================================== -->
+	<!--  target: makeJavaDoc			    -->
+	<!-- ================================== -->
+	<target name="makeJavaDoc" depends="compile" description="Build the Javadoc of the project">
+		<echo message="Start Creating Javadoc in directory: ${project.building.directory}/${project.javadoc.directory.name}" />
+		<echo message="Start Making Javadoc: ${project.javadoc.packagenames}" />
+		<path id="project.javadoc.classpath">
+			<fileset dir="${project.building.directory}/${project.sources.directory.name}">
+				<include name="*.java" />
+			</fileset>
+		</path>
+		<!-- Make the Javadoc -->
+		<makeJavadoc srcdir="${project.building.directory}/${project.sources.directory.name}" destdir="${project.building.directory}/${project.javadoc.directory.name}" packagenames="${project.javadoc.packagenames}" />
+	</target>
+
+</project>
+

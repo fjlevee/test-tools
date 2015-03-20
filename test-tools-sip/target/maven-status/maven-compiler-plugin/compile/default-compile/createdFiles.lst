@@ -1,0 +1,5 @@
+com/fjl/test/tools/sip/SipClientUAEvent.class
+com/fjl/test/tools/sip/SipClientUAListener.class
+com/fjl/test/tools/sip/SipActor.class
+com/fjl/test/tools/sip/SipActorFactory.class
+com/fjl/test/tools/sip/SipClientTestManagerConfiguration.class

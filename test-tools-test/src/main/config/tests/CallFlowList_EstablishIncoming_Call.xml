@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<callflowlist name="EstablishIncomingCall" title="Establish Incoming Calls Uses Cases">
+	<comment>
+	<![CDATA[This list of call flow shows uses cases when establishing Incoming Calls]]>
+	</comment>
+	<callflow name="CallFlow_01_EstablishIncoming_Call" file="CallFlow_01_EstablishIncoming_Call.xml" />
+	<callflow name="CallFlow_02_EstablishIncoming_Call_Rejected"
+		file="CallFlow_02_EstablishIncoming_Call_Rejected.xml" />
+		<callflow name="CallFlow_03_EstablishIncoming_Call_Rejected"
+		file="CallFlow_03_EstablishIncoming_Call_Rejected.xml" />
+	<callflowlist name="EstablishIncomingCallSpecialUsesCases"
+		title="Establish Incoming Special Uses Cases">
+		<comment>
+			<![CDATA[This list of call flow shows special uses cases when establishing Incoming Calls]]>
+		</comment>	
+		<callflow name="CallFlow_03_EstablishIncoming_Call_Rejected_by_callee" file="CallFlow_03_EstablishIncoming_Call_Rejected_by_callee.xml" />
+		<callflow name="CallFlow_04_Bye_From_Callee" file="CallFlow_04_Bye_From_Callee.xml" />
+	</callflowlist>
+</callflowlist>

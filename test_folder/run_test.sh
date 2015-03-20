@@ -1,0 +1,1 @@
+java -cp `cat classpath_linux.txt` com.fjl.test.tools.run.TestToolsMain

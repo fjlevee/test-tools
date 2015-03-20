@@ -1,0 +1,70 @@
+2015-03-19 11:41:58,635 TRACE [main                ] com.fjl.test.tools.run.ClassPathScanner - logger TestActorFactory class: com.fjl.test.tools.GenericActorFactory
+2015-03-19 11:41:58,637 TRACE [main                ] com.fjl.test.tools.run.ClassPathScanner - logger TestActorFactory class: com.fjl.test.tools.sip.SipActorFactory
+2015-03-19 11:41:58,638 DEBUG [main                ] com.fjl.test.tools.GenericActorFactory - SIP=com.fjl.test.tools.sip.SipActorFactory
+2015-03-19 11:41:58,665 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 1 is a Comment line.
+2015-03-19 11:41:58,665 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 2 is a >> Configuration line.
+2015-03-19 11:41:58,665 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 3 is a Configuration line.
+2015-03-19 11:41:58,666 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 4 is a Configuration line.
+2015-03-19 11:41:58,666 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 5 is a Configuration line.
+2015-03-19 11:41:58,666 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 6 is a Configuration line.
+2015-03-19 11:41:58,666 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 7 is a << Configuration line.
+2015-03-19 11:41:58,667 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 8 is a undefined line.
+2015-03-19 11:41:58,667 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 9 is a Comment line.
+2015-03-19 11:41:58,667 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 10 is a >> Actors line.
+2015-03-19 11:41:58,667 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 11 is a Actors line.
+2015-03-19 11:41:58,668 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 12 is a Actors line.
+2015-03-19 11:41:58,668 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 13 is a Actors line.
+2015-03-19 11:41:58,668 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 14 is a Actors line.
+2015-03-19 11:41:58,669 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 15 is a Actors line.
+2015-03-19 11:41:58,669 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 16 is a Actors line.
+2015-03-19 11:41:58,669 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 17 is a Actors line.
+2015-03-19 11:41:58,670 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 18 is a << Actors line.
+2015-03-19 11:41:58,670 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 19 is a undefined line.
+2015-03-19 11:41:58,670 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 20 is a Comment line.
+2015-03-19 11:41:58,671 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 21 is a undefined line.
+2015-03-19 11:41:58,671 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 22 is a >> Test line.
+2015-03-19 11:41:58,671 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 23 is a Test line.
+2015-03-19 11:41:58,672 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 24 is a Comment line.
+2015-03-19 11:41:58,672 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 25 is a Test line.
+2015-03-19 11:41:58,672 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 26 is a Test line.
+2015-03-19 11:41:58,672 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 27 is a Test line.
+2015-03-19 11:41:58,673 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 28 is a Test line.
+2015-03-19 11:41:58,673 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 29 is a Test line.
+2015-03-19 11:41:58,673 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 30 is a Test line.
+2015-03-19 11:41:58,674 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 31 is a Test line.
+2015-03-19 11:41:58,674 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 32 is a Test line.
+2015-03-19 11:41:58,674 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 33 is a Test line.
+2015-03-19 11:41:58,675 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 34 is a Test line.
+2015-03-19 11:41:58,675 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 35 is a Test line.
+2015-03-19 11:41:58,676 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 36 is a Test line.
+2015-03-19 11:41:58,676 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 37 is a Test line.
+2015-03-19 11:41:58,676 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 38 is a Test line.
+2015-03-19 11:41:58,676 DEBUG [main                ] com.fjl.test.tools.parser.TestParser - Line 39 is a << Test line.
+2015-03-19 11:41:58,677 DEBUG [main                ] com.fjl.test.tools.Test - Test.constructor: Start...
+2015-03-19 11:41:58,678 DEBUG [main                ] com.fjl.test.tools.Test - Test.constructor: End.
+2015-03-19 11:41:58,678 TRACE [main                ] com.fjl.test.tools.parser.TestParser - Actors param: >server.ip=127.0.0.1<
+2015-03-19 11:41:58,678 TRACE [main                ] com.fjl.test.tools.parser.TestParser - Actors param: >server.port=5080<
+2015-03-19 11:41:58,678 TRACE [main                ] com.fjl.test.tools.parser.TestParser - Actors param: >local.address=127.0.0.1<
+2015-03-19 11:41:58,678 INFO  [main                ] com.fjl.test.tools.parser.TestParser - 
+============== PARAMS LIST ==============
+
+Test Id: /home/fjlevee/dev/fjl-tools/test-tools-main/test_folder/Test01.tst
+Test file: /home/fjlevee/dev/fjl-tools/test-tools-main/test_folder/Test01.tst
+local.address=127.0.0.1
+server.port=5080
+server.ip=127.0.0.1
+
+=========================================
+
+2015-03-19 11:41:58,678 TRACE [main                ] com.fjl.test.tools.parser.TestParser - Actor param: >Actor1.name=Caller<
+2015-03-19 11:41:58,678 TRACE [main                ] com.fjl.test.tools.parser.TestParser - Actor Id: >Actor1< param: >name=Caller<
+2015-03-19 11:41:58,678 TRACE [main                ] com.fjl.test.tools.parser.TestParser - Actor param: >Actor1.type=SIP<
+2015-03-19 11:41:58,678 TRACE [main                ] com.fjl.test.tools.parser.TestParser - Actor Id: >Actor1< param: >type=SIP<
+2015-03-19 11:41:58,678 TRACE [main                ] com.fjl.test.tools.parser.TestParser - Actor param: >Actor2.name=Callee<
+2015-03-19 11:41:58,678 TRACE [main                ] com.fjl.test.tools.parser.TestParser - Actor Id: >Actor2< param: >name=Callee<
+2015-03-19 11:41:58,678 TRACE [main                ] com.fjl.test.tools.parser.TestParser - Actor param: >Actor2.type=SIP<
+2015-03-19 11:41:58,679 TRACE [main                ] com.fjl.test.tools.parser.TestParser - Actor Id: >Actor2< param: >type=SIP<
+2015-03-19 11:41:58,679 DEBUG [main                ] com.fjl.test.tools.GenericActorFactory - Creating actor Actor2 of type: SIP
+2015-03-19 11:41:58,679 DEBUG [main                ] com.fjl.test.tools.ActorFactory - Creating actor Actor2
+2015-03-19 11:41:58,679 DEBUG [main                ] com.fjl.test.tools.GenericActorFactory - Creating actor Actor1 of type: SIP
+2015-03-19 11:41:58,679 DEBUG [main                ] com.fjl.test.tools.ActorFactory - Creating actor Actor1
